@@ -1,0 +1,4 @@
+en:
+  actions:
+    devise:
+      sign_out: Sign out
