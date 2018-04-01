@@ -20,9 +20,16 @@ group :development, :test do
   gem 'pry'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.7'
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
 end
+
+group :test do
+  gem 'capybara', '~> 2.13'
+  gem 'poltergeist'
+  gem 'database_cleaner'
+  gem 'formulaic'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'email_spec'
+ end
 
 group :development do
   gem 'letter_opener'

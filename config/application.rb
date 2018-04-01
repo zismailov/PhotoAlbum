@@ -12,5 +12,9 @@ module PhotoAlbum
     config.load_defaults 5.1
 
     config.assets.initialize_on_precompile = false
+
+    config.noreply = "no-reply@example.com"
+
+    config.host = "localhost:3000"
   end
 end
