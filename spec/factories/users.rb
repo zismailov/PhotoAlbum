@@ -6,7 +6,7 @@ FactoryBot.define do
   end
 
   trait :confirmed do
-    confirmed_at 1.hour.ago
+    confirmed_at { 1.hour.ago }
   end
 
   trait :not_confirmed do
