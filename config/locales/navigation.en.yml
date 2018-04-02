@@ -1,0 +1,6 @@
+en:
+  app:
+    navigation:
+      main:
+        albums: 'Albums'
+        new_album: 'Create new album'

@@ -1,26 +1,14 @@
 class AlbumsController < ApplicationController
-  before_action :set_album, only: %i[show edit update destroy]
+  respond_to :html
 
-  def index
-    @albums = Album.all
-  end
-
-  def show; end
-
-  def new
-    @album = Album.new
-  end
-
-  def edit; end
+  expose :album # Album.new or Album.find(id)
+  expose :albums, -> { current_user.albums } # expose :albums, from: :current_user.albums
 
   def create
-    @album = Album.new(album_params)
+    album.user = current_user
+    album.save
 
-    if @album.save
-      redirect_to @album, notice: "Album was successfully created."
-    else
-      render :new
-    end
+    respond_with album
   end
 
   def update
@@ -38,11 +26,7 @@ class AlbumsController < ApplicationController
 
   private
 
-  def set_album
-    @album = Album.find(params[:id])
-  end
-
   def album_params
-    params.require(:album).permit(:user_id, :parent_album_id, :title, :description)
+    params.require(:album).permit(:title, :description, :parent_album_id)
   end
 end

@@ -1,0 +1,6 @@
+en:
+  helpers:
+    submit:
+      album:
+        create: 'Create album'
+        update: 'Update album'
