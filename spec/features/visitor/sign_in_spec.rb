@@ -19,6 +19,8 @@ RSpec.describe "Sign in", type: :feature do
   it "User has not confirmed email address" do
     sign_in(not_confirmed_user.email, "12345678")
 
+    expect(page).to have_current_path(new_user_session_path)
+    expect(page).not_to have_content "Signed in successfully"
     expect(page).to have_content("You have to confirm your email address before continuing.")
   end
 

@@ -1,1 +1,1 @@
-FactoryGirl.create(:user, :confirmed)
+FactoryBot.create(:user, :confirmed)

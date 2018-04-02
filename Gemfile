@@ -29,6 +29,7 @@ group :test do
   gem "database_cleaner"
   gem "email_spec"
   gem "formulaic"
+  gem "launchy"
   gem "poltergeist"
   gem "shoulda-matchers", "~> 3.1"
 end
