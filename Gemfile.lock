@@ -42,6 +42,8 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     ast (2.4.0)
+    autoprefixer-rails (8.2.0)
+      execjs
     bcrypt (3.1.11)
     bindex (0.5.0)
     builder (3.2.3)
@@ -87,6 +89,9 @@ GEM
       activesupport
       capybara
       i18n
+    foundation-rails (5.4.5.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     htmlentities (4.3.4)
@@ -246,6 +251,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   database_cleaner
@@ -253,6 +259,7 @@ DEPENDENCIES
   email_spec
   factory_bot_rails
   formulaic
+  foundation-rails
   jbuilder (~> 2.5)
   jquery-rails
   launchy

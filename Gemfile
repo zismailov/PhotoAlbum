@@ -5,8 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "autoprefixer-rails"
 gem "coffee-rails", "~> 4.2"
 gem "devise"
+gem "foundation-rails"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "pg", ">= 0.18", "< 2.0"
