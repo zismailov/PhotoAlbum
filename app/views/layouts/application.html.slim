@@ -1,25 +1,23 @@
 doctype html
-html lang="en"
+
+html class='no-js' lang='en'
+
   head
-    meta charset="utf-8"
-    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta charset='utf-8'
+    meta name='viewport' content='width=device-width, initial-scale=1.0'
 
-    title = content_for?(:title) ? yield(:title) : "OpenAlbum"
+    title = content_for?(:title) ? yield(:title) : "PhotoAlbum"
 
-    = stylesheet_link_tag    "application"
-    = javascript_include_tag "vendor/modernizr"
-    = javascript_include_tag "application"
     = csrf_meta_tags
+    = stylesheet_link_tag :application
+    = javascript_include_tag 'vendor/modernizr'
 
   body
-    p.notice = notice
-    p.alert = alert
+    #root
+      = render 'navigation'
+      = render 'messages'
 
-    - if user_signed_in?
-      = link_to t('actions.devise.sign_out'), destroy_user_session_path, method: :delete
-    - else
-      = link_to t('titles.devise.sessions.new'), new_user_session_path
-      '
-      = link_to t('titles.devise.registrations.new'), new_user_registration_path
+      = yield
 
-    = yield
+    //= render 'footer'
+    = javascript_include_tag :application
