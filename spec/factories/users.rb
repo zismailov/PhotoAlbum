@@ -13,7 +13,7 @@ FactoryBot.define do
     confirmed_at nil
 
     after(:create) do |user|
-      user.update(confirmation_sent_at: 1.days.ago)
+      user.update(confirmation_sent_at: 1.day.ago)
     end
   end
 end
