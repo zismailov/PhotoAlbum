@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
   respond_to :html
 
-  expose :album # Album.new or Album.find(id)
+  expose(:album, attributes: :album_params)  # Album.new or Album.find(id)
   expose :albums, -> { current_user.albums } # expose :albums, from: :current_user.albums
 
   def create
