@@ -12,10 +12,10 @@ class AlbumsController < ApplicationController
   end
 
   def update
-    if @album.update(album_params)
-      redirect_to @album, notice: "Album was successfully updated."
+    if album.save
+      redirect_to album_photos_path
     else
-      render :edit
+      respond_with album
     end
   end
 

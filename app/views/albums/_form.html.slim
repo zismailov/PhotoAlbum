@@ -2,6 +2,6 @@
   .form-inputs
     = f.input :title
     = f.input :description
-    = f.association :parent_album
+    = f.association :parent_album, include_blank: 'Should be top level album'
   .form-actions
     = f.button :submit
