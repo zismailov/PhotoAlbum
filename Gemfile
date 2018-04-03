@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "active_link_to"
 gem "autoprefixer-rails"
 gem "coffee-rails", "~> 4.2"
 gem "decent_exposure"

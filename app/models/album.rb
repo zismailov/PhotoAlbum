@@ -3,7 +3,7 @@ class Album < ApplicationRecord
   validates :title, uniqueness: { scope: :user_id, message: "has already been taken" }
 
   belongs_to :user
-  belongs_to :parent_album, class_name: "Album"
+  belongs_to :parent_album, class_name: "Album", optional: true
 
   has_many :child_albums, class_name: "Album", foreign_key: "parent_album_id"
   has_many :photos

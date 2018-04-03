@@ -1,19 +1,23 @@
 class AlbumsController < ApplicationController
+  before_action :authenticate_user!
+
   respond_to :html
 
-  expose(:album, attributes: :album_params)  # Album.new or Album.find(id)
-  expose :albums, -> { current_user.albums } # expose :albums, from: :current_user.albums
+  expose(:album, attributes: :album_params) # Album.new or Album.find(id)
+  expose :albums, -> { current_user.top_level_albums } # expose :albums, from: :current_user.top_level_albums
 
   def create
     album.user = current_user
-    album.save
-
-    respond_with album
+    if album.save
+      redirect_to albums_path
+    else
+      respond_with album
+    end
   end
 
   def update
     if album.save
-      redirect_to album_photos_path
+      redirect_to album_photos_path(album)
     else
       respond_with album
     end
