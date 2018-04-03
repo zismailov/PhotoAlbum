@@ -22,11 +22,15 @@ gem "slim"
 gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
+  gem "brakeman", require: false
   gem "factory_bot_rails"
+  gem "faker"
   gem "pry"
+  gem "rails_best_practices"
   gem "rspec-rails", "~> 3.7"
   gem "rubocop", require: false
   gem "rubocop-rspec", require: false
+  gem "scss_lint", require: false
 end
 
 group :test do

@@ -1,4 +1,4 @@
-h1 Listing photos
+h3 = @album.title
 
 table
   thead
@@ -24,4 +24,4 @@ table
 
 br
 
-= link_to 'New Photo', new_album_photo_path
+= link_to 'New Photo', new_album_photo_path(@album)

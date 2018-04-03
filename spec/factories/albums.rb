@@ -1,8 +1,8 @@
 FactoryBot.define do
-  factory :album do
-    user_id 1
-    parent_album_id 1
-    title "MyString"
-    description "MyText"
+  factory :album, class: "Album" do
+    title { generate(:album_title) }
+    description { Faker::Lorem.sentence }
+    parent_album { parent_album }
+    user { user }
   end
 end
