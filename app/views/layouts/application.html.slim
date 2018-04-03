@@ -13,10 +13,10 @@ html class='no-js' lang='en'
     = javascript_include_tag 'vendor/modernizr'
 
   body
-    #root
+    .root
       = render 'navigation'
       = render 'messages'
-    #content
+    .content
       = yield
 
     //= render 'footer'
