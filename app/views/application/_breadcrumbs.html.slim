@@ -1,0 +1,6 @@
+ul.breadcrumbs
+  li
+    = link_to t('app.albums.root'), albums_path
+  - @album.parents.each do |album|
+    li = link_to album.title, album_photos_path(album)
+  li.current = @album.title

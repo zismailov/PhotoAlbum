@@ -8,8 +8,6 @@ class Album < ApplicationRecord
   has_many :child_albums, class_name: "Album", foreign_key: "parent_album_id"
   has_many :photos
 
-  scope :root, -> { where(parent_album_id: nil) }
-
   def random_photo
     photos.order("RANDOM()").first
   end
@@ -24,7 +22,7 @@ class Album < ApplicationRecord
 
   def parents
     parents = []
-    return if top_level_album?
+    return parents if top_level_album?
 
     some_parent = parent_album
 

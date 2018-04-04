@@ -1,4 +1,7 @@
 .row
   .medium-6.medium-centered.columns
     h2 Edit Album
-    = render 'form'
+    = render "form"
+  .medium-6.medium-centered.columns
+    - if album.completely_empty?
+      = link_to 'Delete this album', album_path(album), method: :delete, data: { confirm: 'Sure? Delete this album?' }

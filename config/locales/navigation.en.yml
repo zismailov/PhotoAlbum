@@ -3,4 +3,5 @@ en:
     navigation:
       main:
         albums: 'Albums'
+        add_photos: "Add photos!"
         new_album: 'Create new album'

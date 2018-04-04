@@ -8,4 +8,5 @@ ul.albums
         = link_to edit_album_path(album), class: "album_action_link" do
           i.fi-pencil
       .album-description
-        p.description = t("app.albums.description", albums_count: album.child_albums.count, photos_count: album.photos.count).html_safe
+        p.description
+          = t("app.albums.description", albums_count: album.child_albums.count, photos_count: album.photos.count).html_safe

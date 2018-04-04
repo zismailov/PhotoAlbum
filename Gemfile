@@ -21,6 +21,12 @@ gem "simple_form"
 gem "slim"
 gem "uglifier", ">= 1.3.0"
 
+# picture management
+gem "aws-sdk", "~> 3"
+gem "carrierwave-aws"
+gem "mini_magick"
+gem "s3_direct_upload"
+
 group :development, :test do
   gem "brakeman", require: false
   gem "factory_bot_rails"
