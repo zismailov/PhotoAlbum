@@ -1,12 +1,3 @@
 ul.albums
   - albums.each do |album|
-    li.album data-id=album.id
-      .album-cover
-      .album-title
-        p.title = link_to album.title, album_photos_path(album)
-      .album-actions
-        = link_to edit_album_path(album), class: "album_action_link" do
-          i.fi-pencil
-      .album-description
-        p.description
-          = t("app.albums.description", albums_count: album.child_albums.count, photos_count: album.photos.count).html_safe
+    = render 'album', album: album

@@ -1,6 +1,6 @@
 en:
   titles:
-    application: OpenAlbum
+    application: PhotoAlbum
     pages:
       home: Home
     devise:

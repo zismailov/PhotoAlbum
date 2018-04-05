@@ -1,0 +1,7 @@
+.upload_form
+  = s3_uploader_form callback_url:   album_photos_url(@album),
+                     callback_param: 'photo[remote_picture_url]',
+                     id: 's3-uploader',
+                     key: "pictures/#{SecureRandom.hex}/${filename}",
+                     key_starts_with: 'pictures/'
+    = file_field_tag :file, multiple: true

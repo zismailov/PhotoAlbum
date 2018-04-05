@@ -2,4 +2,9 @@
 
 h3 = @album.title
 
-= render 'albums', albums: @album.child_albums
+- if @album.child_albums.any?
+  = render 'albums', albums: @album.child_albums
+
+ul.photos data-album-id=@album.id
+
+= render 'uploader'

@@ -27,35 +27,25 @@ $border-color: #d3d3d3;
 
     .album-title {
       float: left;
+      font-size: 1em;
+      font-weight: bold;
       height: 18px;
-
-      .title {
-        font-size: 1em;
-        font-weight: bold;
-        margin-left: 7px;
-      }
+      margin-left: 7px;
     }
 
     .album-actions {
       float: right;
       height: 18px;
-
+      margin-left: 7px;
       margin-right: 7px;
-
-      .album_action_link {
-        margin-left: 7px;
-      }
     }
 
     .album-description {
-      height: 46px;
       clear: both;
-      padding: 3px;
+      font-size: .75em;
+      height: 46px;
       overflow: hidden;
-
-      .description {
-        font-size: 0.75em;
-      }
+      padding: 3px;
     }
   }
 }
