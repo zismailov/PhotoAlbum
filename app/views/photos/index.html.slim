@@ -3,9 +3,13 @@
 h3 = @album.title
 
 - if @album.child_albums.any?
-  = render 'albums', albums: @album.child_albums
+  = render 'albums/albums', albums: @album.child_albums
 
 - if @album.photos.any?
-  ul.photos data-album-id=@album.id
+  = render 'photos', photos: @photos
 
 = render 'uploader'
+
+coffee:
+  $ ->
+    new window.Album
