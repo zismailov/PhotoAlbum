@@ -1,25 +1,25 @@
 class PhotosController < ApplicationController
+  before_action :authenticate_user!
+
+  respond_to :html
+
+  expose(:photo)
+
   def index
     @album = Album.find(params[:album_id])
     @photos = @album.photos
   end
 
-  def show; end
-
-  def new
-    @photo = Photo.new
-  end
-
-  def edit; end
-
   def create
-    @photo = Photo.new(photo_params)
+    @album = Album.find(params[:album_id])
+    @photo = @album.photos.new
 
-    if @photo.save
-      redirect_to @photo, notice: "Photo was successfully created."
-    else
-      render :new
-    end
+    @photo.title = File.basename(params[:filename], File.extname(params[:filename]))
+
+    @photo.remote_picture_url = URI.decode_www_form photo_params[:remote_picture_url]
+    @photo.save
+
+    Amazon.delete_tmp_file(URI.decode_www_form(params[:filepath]))
   end
 
   def update

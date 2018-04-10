@@ -2,7 +2,6 @@ class @PhotoAlbum
 
   uploaderForm:       $("#s3-uploader")
   photosContainer:    $(".photos")
-  openUploaderButton: $(".open-uploader-button")
   fileInput:          $("input#file")
 
   constructor: ->
@@ -12,6 +11,5 @@ class @PhotoAlbum
     if @photosContainer?
       @uploaderForm.S3Uploader
         additional_data: { album_id: @photosContainer.data('album_id') }
-      @openUploaderButton.on 'click', (e) =>
-        e.preventDefault()
-        @fileInput.trigger("click")
+        progress_bar_target: $(".uploader-progress-bars")
+        remove_completed_progress_bar: false

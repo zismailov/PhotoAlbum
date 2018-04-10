@@ -1,7 +1,16 @@
-.upload_form
-  = s3_uploader_form callback_url:   album_photos_url(@album),
-                     callback_param: 'photo[remote_picture_url]',
-                     id: 's3-uploader',
-                     key: "pictures/#{SecureRandom.hex}/${filename}",
-                     key_starts_with: 'pictures/'
-    = file_field_tag :file, multiple: true
+#uploader-modal.reveal-modal aria-labelledby="Upload photos" aria-hidden="true" role="dialog" data-reveal="true"
+  .row
+    h3 Upload new photos to #{@album.title}
+    .left Please, choose photos you want to add to this album
+    .right
+      = s3_uploader_form callback_url:   album_photos_url(@album),
+                         callback_param: 'photo[remote_picture_url]',
+                         id: 's3-uploader',
+                         key: "pictures/#{SecureRandom.hex}/${filename}",
+                         key_starts_with: 'pictures/'
+        = file_field_tag :file, multiple: true
+
+    a.close-reveal-modal aria-label="Close" &#215;
+  .row
+    .uploader-progress-bars
+    = render "progress_bars"

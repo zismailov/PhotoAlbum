@@ -27,7 +27,7 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
-    @album.destroy
+    album.destroy
     redirect_to albums_url, notice: "Album was successfully destroyed."
   end
 

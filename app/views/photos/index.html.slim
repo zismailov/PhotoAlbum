@@ -5,6 +5,7 @@ h3 = @album.title
 - if @album.child_albums.any?
   = render 'albums', albums: @album.child_albums
 
-ul.photos data-album-id=@album.id
+- if @album.photos.any?
+  ul.photos data-album-id=@album.id
 
 = render 'uploader'
