@@ -1,4 +1,4 @@
-class @Album
+class window.Album
 
   uploaderForm:    $("#s3-uploader")
   photosContainer: $("li.photos")
@@ -10,7 +10,8 @@ class @Album
 
   initializeUploader: ->
     @uploaderForm.S3Uploader
-      additional_data: { album_id: @photosContainer.data('album_id') }
+      additional_data:
+        album_id: @photosContainer.data('album-id')
       progress_bar_target: $(".uploader-progress-bars")
       remove_completed_progress_bar: false
 

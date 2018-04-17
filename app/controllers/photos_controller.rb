@@ -23,8 +23,8 @@ class PhotosController < ApplicationController
   end
 
   def update
-    if @photo.update(photo_params)
-      redirect_to @photo, notice: "Photo was successfully updated."
+    if photo.update(photo_params)
+      redirect_to photo, notice: "Photo was successfully updated."
     else
       render :edit
     end

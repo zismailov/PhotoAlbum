@@ -1,6 +1,6 @@
 li.photo data-id=photo.id
   .photo-cover
-    = link_to (image_tag photo.picture.thumbnail.url), photo
+    = link_to (image_tag photo.picture.thumbnail.url), photo_path(photo)
     .photo-actions
       .photo-name.left = photo.title
       .photo-icons.right

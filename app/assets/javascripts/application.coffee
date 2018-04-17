@@ -6,5 +6,6 @@
 #= require_tree .
 
 $ ->
-
   $(document).foundation()
+
+  window.AlbumPage = new window.Album
