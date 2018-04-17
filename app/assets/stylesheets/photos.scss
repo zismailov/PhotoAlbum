@@ -1,72 +1,34 @@
-ul.photos {
+$photo-actions-bg: #fff;
+$photo-thumbnail-bg: #d3d3d3;
+
+.photos {
   clear: both;
-
-  padding-top: 7px;
-  margin: 0 auto;
-
   list-style-type: none;
+  margin: 0 auto;
+  padding-top: 7px;
 
-  #bars {
-    position: absolute;
-    left: 3px;
-    top: 3px;
-  }
-
-  li.photo {
-
-    margin:  7px;
-
+  .photo-thumbnail {
+    border: 1px solid $photo-thumbnail-bg;
     cursor: pointer;
-
-    border:  1px solid lightgrey;
     float: left;
-
-    p {
-        margin-bottom: 0px;
-    }
-
-    .photo-cover {
-      position: relative;
-
-      .photo-actions {
-        position: absolute;
-        bottom: 0px;
-        width: 100%;
-        height: 32px;
-        min-height: 32px;
-        line-height: 32px;
-        background-color: white;
-        padding-left: 5px;
-        padding-right: 5px;
-        opacity: 0.75;
-        display: none;
-      }
-    }
-  }
-}
-
-#photo {
-
-  .preview, .title {
-    width: 960px;
-    margin: 0 auto;
+    margin: 7px;
   }
 
-  .preview {
-    text-align: center;
+  .photo-cover {
+    position: relative;
   }
 
-  .title {
-    .title-left {
-      float: left;
-      height: 64px;
-      line-height: 64px;
-    }
-
-    .title-right {
-      float: right;
-      height: 64px;
-      line-height: 64px;
-    }
+  .photo-actions {
+    background-color: $photo-actions-bg;
+    bottom: 0;
+    display: none;
+    height: 32px;
+    line-height: 32px;
+    min-height: 32px;
+    opacity: .75;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: absolute;
+    width: 100%;
   }
 }
