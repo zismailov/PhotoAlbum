@@ -21,6 +21,9 @@ gem "simple_form"
 gem "slim"
 gem "uglifier", ">= 1.3.0"
 
+# monitoring
+gem "rollbar"
+
 # picture management
 gem "aws-sdk", "~> 3"
 gem "carrierwave-aws"
