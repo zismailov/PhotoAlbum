@@ -1,18 +1,11 @@
-p#notice = notice
-
-p
-  strong Title:
-  = @photo.title
-p
-  strong Description:
-  = @photo.description
-p
-  strong Album:
-  = @photo.album_id
-p
-  strong Picture:
-  = @photo.picture
-
-= link_to 'Edit', edit_photo_path(@photo)
-
-= link_to 'Back', photos_path
+- if @photo
+  #photo data-id=@photo.id
+    .title
+      .title-left
+        h3 = @photo.title
+      .title-right
+        /= link_to download_photo_slug_path(@photo.slug) do
+        /  i.fi-download
+    .preview = link_to image_tag @photo.picture.preview.url
+- else
+  h3 Sorry, photo was not found.
