@@ -5,12 +5,12 @@ ru:
       home: Home
     devise:
       registrations:
-        new: Sign up
+        new: Регистрация
         edit: Edit %{user}
       sessions:
         new: Вход
       passwords:
         new: "Забыли пароль?"
-        edit: Change password
+        edit: Изменить пароль
       confirmations:
         new: "Didn't receive confirmation instructions?"

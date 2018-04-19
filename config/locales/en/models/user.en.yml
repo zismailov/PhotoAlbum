@@ -1,0 +1,13 @@
+ru:
+  activerecord:
+    models:
+      user:
+    attributes:
+      user:
+        full_name:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: Can't be blank! 

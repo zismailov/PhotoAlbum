@@ -1,0 +1,20 @@
+ru:
+  activerecord:
+    models:
+      user:
+    attributes:
+      user:
+        email: Адрес e-mail
+        password: Пароль
+        password_confirmation: Пароль ещё раз
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: Укажите, пожалуйста, Ваш e-mail!
+            password:
+              blank: Нужно придумать пароль!
+              too_short: Пароль слишком короткий!
+            password_confirmation:
+              confirmation: Пароли не совпадают! 
