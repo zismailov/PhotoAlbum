@@ -2,7 +2,7 @@ class window.Album
 
   uploaderForm:    $("#s3-uploader")
   photosContainer: $("li.photos")
-  photoContainer:  $("li.photo")
+  photoContainer:  $("li.photo-thumbnail")
   fileInput:       $("input#file")
 
   constructor: ->

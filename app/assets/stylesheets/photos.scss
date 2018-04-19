@@ -4,14 +4,13 @@ $photo-thumbnail-bg: #d3d3d3;
 .photos {
   clear: both;
   list-style-type: none;
-  margin: 0 auto;
+  margin: 0;
   padding-top: 7px;
 
   .photo-thumbnail {
     border: 1px solid $photo-thumbnail-bg;
     cursor: pointer;
     float: left;
-    margin: 7px;
   }
 
   .photo-cover {
