@@ -3,6 +3,7 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :trackable, :validatable
 
   has_many :albums, dependent: :destroy
+  has_many :photos, through: :albums
 
   LOCALES = [
     %w[Русский ru],

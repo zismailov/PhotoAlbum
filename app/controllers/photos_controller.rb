@@ -11,7 +11,7 @@ class PhotosController < ApplicationController
   end
 
   def create
-    PhotoProcessor.perform_async(params)
+    PhotoProcessorWorker.perform_async(@album.id, photo_title, photo_path, remote_url)
   end
 
   def update
@@ -27,6 +27,18 @@ class PhotosController < ApplicationController
   end
 
   private
+
+  def photo_title
+    File.basename(params[:filename], File.extname(params[:filename]))
+  end
+
+  def photo_path
+    URI.decode_www_form params[:filepath]
+  end
+
+  def remote_url
+    URI.decode_www_form params[:photo][:remote_picture_url]
+  end
 
   def set_album
     @album = Album.find(params[:album_id])

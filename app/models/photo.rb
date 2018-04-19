@@ -4,4 +4,5 @@ class Photo < ApplicationRecord
   validates :album_id, presence: true
 
   belongs_to :album
+  belongs_to :user
 end
