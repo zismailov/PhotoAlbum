@@ -1,0 +1,16 @@
+ru:
+  titles:
+    application: OpenAlbum
+    pages:
+      home: Home
+    devise:
+      registrations:
+        new: Sign up
+        edit: Edit %{user}
+      sessions:
+        new: Вход
+      passwords:
+        new: "Забыли пароль?"
+        edit: Change password
+      confirmations:
+        new: "Didn't receive confirmation instructions?"

@@ -11,6 +11,10 @@ module PhotoAlbum
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
+    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+    config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**/*.yml").to_s]
+    config.i18n.default_locale = :en
+
     config.assets.initialize_on_precompile = false
 
     config.noreply = "no-reply@example.com"

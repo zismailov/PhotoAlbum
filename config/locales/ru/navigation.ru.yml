@@ -1,0 +1,7 @@
+ru:
+  app:
+    navigation:
+      main:
+        albums: "Альбомы"
+        add_photos: "Добавить фото!"
+        new_album: "Создать новый альбом"
