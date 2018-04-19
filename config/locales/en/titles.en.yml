@@ -1,6 +1,6 @@
 en:
+  application: PhotoAlbum
   titles:
-    application: PhotoAlbum
     pages:
       home: Home
     devise:

@@ -1,4 +1,7 @@
 ru:
   actions:
     devise:
-      sign_out: Sign out
+      sign_in: Войти
+      sign_up: Регистрация
+      sign_out: Выйти
+      remember_me: Запомнить меня

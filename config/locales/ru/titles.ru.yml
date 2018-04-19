@@ -1,6 +1,6 @@
 ru:
+  application: PhotoAlbum
   titles:
-    application: OpenAlbum
     pages:
       home: Home
     devise:

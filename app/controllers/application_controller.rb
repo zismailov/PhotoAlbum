@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :set_user_locale
 
-  AVAILABLE_LOCALES = %w[ru en].freeze
+  AVAILABLE_LOCALES = %w[en ru].freeze
 
   def set_user_locale
     if user_signed_in?
