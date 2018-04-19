@@ -5,4 +5,8 @@ class Photo < ApplicationRecord
 
   belongs_to :album
   belongs_to :user
+
+  def processed?
+    processing_status == "finished"
+  end
 end

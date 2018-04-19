@@ -15,6 +15,14 @@ $photo-thumbnail-bg: #d3d3d3;
 
   .photo-cover {
     position: relative;
+    width: 256px;
+    height: 192px;
+
+    .processing {
+      position: fixed;
+      margin-top: 63px;
+      margin-left: 95px;
+    }
   }
 
   .photo-actions {

@@ -11,7 +11,11 @@ class PhotosController < ApplicationController
   end
 
   def create
-    PhotoProcessorWorker.perform_async(@album.id, photo_title, photo_path, remote_url)
+    @photo = Photo.create title: photo_title,
+                          album_id: @album.id,
+                          processing_status: "in_progress"
+
+    PhotoProcessorWorker.perform_async(@photo.id, photo_path, remote_url)
   end
 
   def update

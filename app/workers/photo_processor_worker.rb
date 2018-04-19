@@ -1,11 +1,8 @@
 class PhotoProcessorWorker
   include Sidekiq::Worker
 
-  def perform(album_id, title, path, remote_url)
-    photo = Photo.new title: title,
-                      album_id: album_id,
-                      processing_status: "in_progress"
-
+  def perform(photo_id, path, remote_url)
+    photo = Photo.find(photo_id)
     photo.remote_picture_url = remote_url
     photo.save
 
