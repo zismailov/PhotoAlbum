@@ -1,8 +1,11 @@
 li.photo-thumbnail data-id=photo.id
   .photo-cover
-    = link_to (image_tag photo.picture.thumbnail.url), photo_path(photo)
-    .photo-actions
-      .left = photo.title
-      .right
-        = link_to photo_path(photo), remote: true, method: :delete do
-          i.fi-x
+    - if photo.processing_status == 'finished'
+      = link_to (image_tag photo.picture.thumbnail.url), photo_path(photo)
+      .photo-actions
+        .left = photo.title
+        .right
+          = link_to photo_path(photo), remote: true, method: :delete do
+            i.fi-x
+    - else
+      = image_tag 'ajax-loader.gif'
