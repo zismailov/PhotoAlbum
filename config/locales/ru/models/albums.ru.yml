@@ -1,5 +1,5 @@
 ru:
   app:
     albums:
-      root: "My albums"
-      description: "<strong>%{albums_count}</strong> albums and <strong>%{photos_count}</strong> photos"
+      root: "Мои альбомы"
+      description: "<strong>%{albums_count}</strong> альбомов и <strong>%{photos_count}</strong> фото"

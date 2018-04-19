@@ -1,5 +1,11 @@
 li.album data-id=album.id
   .album-cover
+    = link_to album_photos_path(album) do
+      - if album.photos.any?
+        = image_tag album.random_photo.picture.thumbnail.url
+      - else
+        = image_tag "empty.jpg"
+
   .album-title
     = link_to album.title, album_photos_path(album)
   .album-actions
