@@ -4,3 +4,5 @@ en:
       album:
         create: 'Create album'
         update: 'Update album'
+      user:
+        update: "Update profile" 

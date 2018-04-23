@@ -6,7 +6,7 @@ en:
     devise:
       registrations:
         new: Sign up
-        edit: Edit %{user}
+        edit: My profile
       sessions:
         new: Sign in
       passwords:

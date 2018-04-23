@@ -1,5 +1,14 @@
 en:
+  activerecord:
+    models:
+      album:
+    attributes:
+      album:
+    errors:
+      models:
+        album:
+          attributes:
   app:
     albums:
-      root: 'My albums'
+      root: "My albums"
       description: "<strong>%{albums_count}</strong> albums and <strong>%{photos_count}</strong> photos"

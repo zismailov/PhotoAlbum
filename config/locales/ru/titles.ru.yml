@@ -6,7 +6,7 @@ ru:
     devise:
       registrations:
         new: Регистрация
-        edit: Edit %{user}
+        edit: Мой профиль
       sessions:
         new: Вход
       passwords:

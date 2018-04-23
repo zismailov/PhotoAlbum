@@ -4,4 +4,4 @@
     = render "form"
   .medium-6.medium-centered.columns
     - if album.completely_empty?
-      = link_to 'Delete this album', album_path(album), method: :delete, data: { confirm: 'Sure? Delete this album?' }
+      = link_to t('forms.album.delete'), album_path(album), method: :delete

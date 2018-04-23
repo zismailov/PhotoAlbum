@@ -1,0 +1,8 @@
+ru:
+  forms:
+    registration:
+      change_password_note: оставьте эти поля пустыми, если не хотите менять свой пароль
+      current_password_note: текущий пароль нужен для сохранения изменений
+    album:
+      should_be_top_level_album: Создать как альбом верхнего уровня
+      delete: Удалить альбом 

@@ -1,0 +1,29 @@
+.row
+  .medium-6.small-centered.columns
+    .panel
+      h4 = t('titles.devise.registrations.edit')
+
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+        .form-inputs
+          = f.input :email, autofocus: true
+          = f.select :locale, User::LOCALES, include_blank: false, autofocus: true
+
+        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          p Currently waiting confirmation for: <%= resource.unconfirmed_email
+
+        i = t("forms.registration.change_password_note")
+        = f.input :password, autocomplete: "off"
+        = f.input :password_confirmation, autocomplete: "off"
+
+        i = t("forms.registration.current_password_note")
+        = f.input :current_password, autocomplete: "off"
+
+        .form-actions
+          = f.button :submit
+    .panel
+      h4 Unhappy?
+      = button_to "I want to delete my account!",
+        registration_path(resource_name),
+        data: { confirm: "Are you sure?" },
+        method: :delete,
+        class: "button"

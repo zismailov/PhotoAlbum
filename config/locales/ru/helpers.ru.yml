@@ -2,5 +2,7 @@ ru:
   helpers:
     submit:
       album:
-        create: "Create album"
-        update: "Update album"
+        create: "Создать альбом"
+        update: "Обновить альбом"
+      user:
+        update: "Обновить профиль"

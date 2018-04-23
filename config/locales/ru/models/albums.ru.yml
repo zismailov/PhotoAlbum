@@ -1,4 +1,16 @@
 ru:
+  activerecord:
+    models:
+      album: Альбом
+    attributes:
+      album:
+        title: Название альбома
+        description: Описание альбома
+        parent_album: Родительский альбом
+    errors:
+      models:
+        album:
+          attributes:
   app:
     albums:
       root: "Мои альбомы"

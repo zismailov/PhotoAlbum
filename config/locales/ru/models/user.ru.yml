@@ -7,6 +7,7 @@ ru:
         email: Адрес e-mail
         password: Пароль
         password_confirmation: Пароль ещё раз
+        current_password: Текущий пароль
     errors:
       models:
         user:
@@ -17,4 +18,7 @@ ru:
               blank: Нужно придумать пароль!
               too_short: Пароль слишком короткий!
             password_confirmation:
-              confirmation: Пароли не совпадают! 
+              confirmation: Пароли не совпадают!
+            current_password:
+              blank: Для сохранения изменений укажите Ваш пароль!
+              invalid: Неправильный пароль! Попробуйте снова!

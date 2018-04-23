@@ -1,0 +1,5 @@
+ru:
+  forms:
+    registration:
+      change_password_note: leave blank if you don't want to change it
+      current_password_note: we need your current password to confirm your changes 

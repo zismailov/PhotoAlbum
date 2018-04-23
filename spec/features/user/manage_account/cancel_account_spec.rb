@@ -10,7 +10,7 @@ RSpec.describe "Cancel account", type: :feature do
   it "I cancel my account" do
     visit edit_user_registration_path(user)
 
-    click_button "Cancel my account"
+    click_button "I want to delete my account!"
 
     expect(page).to have_content("Sign in")
     expect(page).to have_content("Bye! Your account has been successfully cancelled. We hope to see you again soon.")

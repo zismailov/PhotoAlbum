@@ -4,7 +4,7 @@ ul.right
       a.user-dropdown(href="#") = current_user.email
       ul.dropdown
         new_user_registration_path
-        li = link_to "Edit profile", edit_user_registration_path
+        li = link_to t("actions.devise.edit_profile"), edit_user_registration_path
         li = link_to t("actions.devise.sign_out"), destroy_user_session_path, method: "delete"
   - else
     = active_link_to t("actions.devise.sign_in"), new_user_session_path, active: :exclusive, wrap_tag: :li
