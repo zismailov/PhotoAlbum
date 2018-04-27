@@ -1,7 +1,7 @@
 - if @photo
   .photo data-id=@photo.id
     .preview
-      = link_to image_tag @photo.picture.preview.url
+      = image_tag @photo.picture.preview.url
     .sidebar
       .title
         h3 = @photo.title
