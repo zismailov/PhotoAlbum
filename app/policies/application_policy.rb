@@ -8,7 +8,7 @@ class ApplicationPolicy
     public_send("#{action}?")
   end
 
-  %w(index show new create edit update).each do |name|
+  %w[index show new create edit update].each do |name|
     define_method("#{name}?") do
       true
     end

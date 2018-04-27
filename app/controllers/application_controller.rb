@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def perform_authorization!(policy)
     return if policy.authorized?(params[:action])
-    
+
     redirect_to(root_url, alert: t("app.authorization.#{policy.object_class.downcase}.#{params[:action]}"))
   end
 

@@ -8,6 +8,6 @@ module AlbumsHelper
       current_user.albums.where.not(id: album.id)
     else
       current_user.albums
-    end
+    end.order(title: :asc)
   end
 end
