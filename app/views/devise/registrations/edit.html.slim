@@ -1,5 +1,5 @@
 .row
-  .medium-6.small-centered.columns
+  .medium-8.small.columns
     .panel
       h4 = t('titles.devise.registrations.edit')
 
@@ -20,6 +20,11 @@
 
         .form-actions
           = f.button :submit
+  .medium-4.small.columns
+    .panel
+      h4 Статистика
+      p = "Альбомов: #{current_user.albums.count}"
+      p = "Фотографий: #{current_user.photos.count}"
     .panel
       h4 Unhappy?
       = button_to "I want to delete my account!",

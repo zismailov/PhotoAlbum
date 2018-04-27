@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
 
   AVAILABLE_LOCALES = %w[en ru].freeze
 
+  def perform_authorization!(policy)
+    return if policy.authorized?(params[:action])
+    
+    redirect_to(root_url, alert: t("app.authorization.#{policy.object_class.downcase}.#{params[:action]}"))
+  end
+
   def set_user_locale
     if user_signed_in?
       I18n.locale = current_user.locale
