@@ -8,8 +8,8 @@ li.album data-id=album.id
 
   .album-title
     = link_to album.title, album_photos_path(album)
+  .album-description
+    = t("app.albums.description", albums_count: album.child_albums.count, photos_count: album.photos.count).html_safe
   .album-actions
     = link_to edit_album_path(album), class: "album_action_link" do
       i.fi-pencil
-  .album-description
-    = t("app.albums.description", albums_count: album.child_albums.count, photos_count: album.photos.count).html_safe
