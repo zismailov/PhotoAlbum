@@ -49,6 +49,7 @@ end
 
 group :test do
   gem "capybara", "~> 2.13"
+  gem "codeclimate-test-reporter", require: nil
   gem "database_cleaner"
   gem "email_spec"
   gem "formulaic"
