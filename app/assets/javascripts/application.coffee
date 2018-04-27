@@ -9,3 +9,6 @@ $ ->
   $(document).foundation()
 
   window.AlbumPage = new window.Album
+
+  $('img').on 'load', ->
+    $(@).parents('li').show()

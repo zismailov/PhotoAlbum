@@ -10,6 +10,7 @@ $photo-thumbnail-bg: #d3d3d3;
   .photo-thumbnail {
     border: 1px solid $photo-thumbnail-bg;
     cursor: pointer;
+    display: none;
     float: left;
   }
 
