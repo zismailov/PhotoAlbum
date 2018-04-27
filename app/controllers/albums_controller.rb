@@ -6,7 +6,7 @@ class AlbumsController < ApplicationController
   expose(:album, attributes: :album_params) # Album.new or Album.find(id)
 
   def index
-    @albums = current_user.top_level_albums
+    @albums = current_user.top_level_albums.order(title: :asc)
   end
 
   def create
