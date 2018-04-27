@@ -1,11 +1,12 @@
 - if @photo
   #photo data-id=@photo.id
-    .title
-      .title-left
+    .preview
+      = link_to image_tag @photo.picture.preview.url
+    .sidebar
+      .title
         h3 = @photo.title
-      .title-right
-        /= link_to download_photo_slug_path(@photo.slug) do
-        /  i.fi-download
-    .preview = link_to image_tag @photo.picture.preview.url
+      = link_to @photo, remote: true, method: :delete, data: { confirm: "Вы уверены, что хотите удалить эту фотографию?"} do
+        i.fi-x
+        '  Удалить фотографию
 - else
   h3 Sorry, photo was not found.
