@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
   respond_to :html
 
   def index
-    @photos = @album.photos.order(title: :asc)
+    @photos = @album.photos.order(position: :asc)
   end
 
   def create

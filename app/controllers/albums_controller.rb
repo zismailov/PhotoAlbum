@@ -20,7 +20,12 @@ class AlbumsController < ApplicationController
 
   def update
     if album.save
-      redirect_to album_photos_path(album)
+      refresh_photos_order!
+
+      respond_to do |format|
+        format.html { redirect_to album_photos_path(album) }
+        format.js { render nothing: true, status: :ok }
+      end
     else
       respond_with album
     end
@@ -33,7 +38,18 @@ class AlbumsController < ApplicationController
 
   private
 
+  def refresh_photos_order!
+    position = 0
+
+    ActiveRecord::Base.transaction do
+      album.photos_order.each do |photo_id|
+        album.photos.find(photo_id).update_attribute("position", position)
+        position += 1
+      end
+    end
+  end
+
   def album_params
-    params.require(:album).permit(:title, :description, :parent_album_id)
+    params.require(:album).permit(:title, :description, :parent_album_id, photos_order: [])
   end
 end
