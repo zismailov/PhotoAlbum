@@ -3,6 +3,9 @@ class User
     USER_PARAMS = %i[
       email
       locale
+      user_name
+      first_name
+      last_name
       password
       password_confirmation
     ].freeze

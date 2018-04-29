@@ -5,6 +5,10 @@ ru:
     attributes:
       user:
         email: Адрес e-mail
+        locale: Предпочитаемый язык
+        user_name: Ваш псевдоним
+        first_name: Имя
+        last_name: Фамилия
         password: Пароль
         password_confirmation: Пароль ещё раз
         current_password: Текущий пароль

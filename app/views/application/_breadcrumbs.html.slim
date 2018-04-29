@@ -3,7 +3,7 @@ ul.breadcrumbs
     - if @album.user == current_user
       = link_to t('app.albums.root'), albums_path
     - else
-      = link_to t('app.albums.user_albums'), user_albums_path(@album.user)
+      = link_to t('app.albums.user_albums'), user_albums_path(@album.user.user_name)
 
   - @album.parents.each do |album|
     li = link_to album.title, album_photos_path(album)
