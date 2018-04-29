@@ -33,6 +33,9 @@ Style/StringLiterals:
   EnforcedStyle: double_quotes
   ConsistentQuotesInMultiline: true
 
+Metrics/AbcSize:
+  Max: 32
+
 Metrics/LineLength:
   Description: 'Limit lines to 120 characters.'
   Max: 120
