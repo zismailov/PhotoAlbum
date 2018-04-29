@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def albums
-    @user = User.find_by_user_name(params[:user_name])
+    @user = User.find_by(user_name: params[:user_name])
 
     if @user
       @albums = @user.top_level_albums.order(title: :asc)

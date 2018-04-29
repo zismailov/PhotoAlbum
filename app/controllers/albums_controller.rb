@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
   before_action :authenticate_user!
 
-  respond_to :html
+  respond_to :html, :js
 
   expose(:album, attributes: :album_params) # Album.new or Album.find(id)
 
@@ -11,21 +11,13 @@ class AlbumsController < ApplicationController
 
   def create
     album.user = current_user
-    if album.save
-      redirect_to albums_path
-    else
-      respond_with album
-    end
+    album.save ? redirect_to(albums_path) : (respond_with album)
   end
 
   def update
     if album.save
       refresh_photos_order!
-
-      respond_to do |format|
-        format.html { redirect_to album_photos_path(album) }
-        format.js { render nothing: true, status: :ok }
-      end
+      redirect_to album_photos_path(album)
     else
       respond_with album
     end

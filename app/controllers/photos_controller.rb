@@ -47,12 +47,12 @@ class PhotosController < ApplicationController
   end
 
   def set_album
-    @album = Album.find_by_id(params[:album_id])
+    @album = Album.find_by(id: params[:album_id])
     @album_policy = AlbumPolicy.new(current_user, @album) if @album
   end
 
   def set_photo
-    @photo = Photo.find_by_id(params[:id])
+    @photo = Photo.find_by(id: params[:id])
     @photo_policy = PhotoPolicy.new(current_user, @photo) if @photo
   end
 

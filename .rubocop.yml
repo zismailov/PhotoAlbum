@@ -1,5 +1,8 @@
 require: rubocop-rspec
 
+Rails:
+  Enabled: true
+
 AllCops:
   TargetRubyVersion: 2.5
   DisplayCopNames: true
@@ -47,7 +50,7 @@ Style/AlignParameters:
   SupportedStyles:
     - with_first_parameter
     - with_fixed_indentation
- 
+
 Style/BracesAroundHashParameters:
   EnforcedStyle: context_dependent
 
