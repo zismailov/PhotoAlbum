@@ -1,14 +1,42 @@
-.photo i {
-  margin-left: 5px;
-  color: grey;
+.photo {
+  margin: 0 auto;
+  width: 1200px;
+
+  i {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }
 
-.photo-title {
-  font-weight: bold;
-  margin-bottom: 3px;
-}
 
 .photo-preview {
-  margin: 0 auto;
+  float: left;
   width: 960px;
+}
+
+.photo-actions {
+  float: left;
+  padding: 3px;
+  width: 240px;
+}
+
+.album-thumbnails {
+  margin: 0 auto;
+  width: 240px;
+}
+
+.small-thumbnail {
+  cursor: pointer;
+  float: left;
+  margin: 4px;
+  opacity: .6;
+  width: 70px;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.current {
+  opacity: 1;
 }
