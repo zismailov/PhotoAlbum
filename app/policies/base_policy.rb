@@ -1,4 +1,4 @@
-class ApplicationPolicy
+class BasePolicy
   def initialize(user, object)
     @user = user
     @object = object

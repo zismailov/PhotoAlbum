@@ -15,4 +15,5 @@ ru:
     albums:
       root: "Мои альбомы"
       user: "Альбомы пользователя %{user}"
+      user_albums: "Все альбомы"
       description: "<strong>%{albums_count}</strong> альбомов и <strong>%{photos_count}</strong> фото"

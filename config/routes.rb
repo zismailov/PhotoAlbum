@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :photos, except: %i[new], shallow: true
   end
 
-  get "/users/:id/albums", to: "users#albums"
+  get "/users/:id/albums", to: "users#albums", as: :user_albums
 
   devise_for :users
 
