@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
 
   before_action :set_album, only: %w[index create]
   before_action :set_photo, only: %w[show update destroy]
