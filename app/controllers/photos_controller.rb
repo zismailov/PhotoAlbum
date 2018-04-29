@@ -4,11 +4,11 @@ class PhotosController < ApplicationController
   before_action :set_album, only: %w[index create]
   before_action :set_photo, only: %w[show update destroy]
 
-  respond_to :html
-
   def index
     @photos = @album.photos.order(position: :asc)
   end
+
+  def show; end
 
   def create
     @photo = Photo.create title: photo_title,

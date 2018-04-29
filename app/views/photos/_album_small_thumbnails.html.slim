@@ -1,0 +1,5 @@
+- @photo.album.photos_order.each do |photo_id|
+  - photo = Photo.find(photo_id)
+  .small-thumbnail class=('current' if @photo.id == photo_id.to_i) data-id=photo_id
+    = link_to (photo), remote: true do
+      = image_tag photo.picture.thumbnail.url

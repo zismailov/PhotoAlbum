@@ -1,0 +1,18 @@
+.left
+  = @photo.title
+.right
+  - if @photo_policy.edit?
+    i.fi-pencil
+  - if @photo_policy.destroy?
+    = link_to @photo, remote: true, method: :delete, data: { confirm: "Вы уверены, что хотите удалить эту фотографию?"} do
+      i.fi-x
+hr
+  .left
+    = link_to (photo_path(@photo.previous_photo_id_from_album)), remote: true do
+      i.fi-arrow-left
+      ' Назад
+  .right
+    = link_to (photo_path(@photo.next_photo_id_from_album)), remote: true do
+      ' Вперёд
+      i.fi-arrow-right
+hr

@@ -1,0 +1,5 @@
+$(".photo-preview").html("<%= j render 'photo_preview' %>");
+$(".photo-actions").html("<%= j render 'photo_actions' %>");
+
+$(".small-thumbnail").removeClass("current");
+$(".small-thumbnail[data-id='<%= @photo.id %>']").addClass("current");

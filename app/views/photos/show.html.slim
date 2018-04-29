@@ -1,31 +1,10 @@
 - if @photo
-  .photo data-id=@photo.id
+  .photo
     .photo-preview
-      = image_tag @photo.picture.preview.url
+      = render "photo_preview"
     .photo-actions
-      .left
-        = @photo.title
-      .right
-        - if @photo_policy.edit?
-          i.fi-pencil
-        - if @photo_policy.destroy?
-          = link_to @photo, remote: true, method: :delete, data: { confirm: "Вы уверены, что хотите удалить эту фотографию?"} do
-            i.fi-x
-      hr
-        .left
-          = link_to do
-            i.fi-arrow-left
-            ' Назад
-        .right
-          = link_to do
-            ' Вперёд
-            i.fi-arrow-right
-      hr
-      .album-thumbnails
-        - @photo.album.photos_order.each do |photo_id|
-          - photo = Photo.find(photo_id)
-          .small-thumbnail class=('current' if @photo.id == photo_id.to_i)
-            = link_to photo do
-              = image_tag photo.picture.thumbnail.url
+      = render "photo_actions"
+    .album-thumbnails
+      = render "album_small_thumbnails"
 - else
   h3 Sorry, photo was not found.
