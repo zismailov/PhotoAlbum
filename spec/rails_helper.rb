@@ -6,8 +6,9 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require "rspec/rails"
 require "shoulda/matchers"
 require "capybara/poltergeist"
+require "simplecov"
 
-CodeClimate::TestReporter.start
+SimpleCov.start
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 

@@ -20,7 +20,7 @@ RSpec.describe "Update album", type: :feature do
   before do
     sign_in(user.email, "12345678")
 
-    visit edit_album_path(root_album)
+    visit edit_album_path(user_root_album)
   end
 
   it "I update album with valid data" do
