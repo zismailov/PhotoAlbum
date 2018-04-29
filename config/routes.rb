@@ -1,10 +1,6 @@
 require "sidekiq/web"
 
 Rails.application.routes.draw do
-  authenticate :user, ->(u) { u.admin? } do
-    mount Sidekiq::Web => "/monitoring"
-  end
-
   authenticated :user do
     root "albums#index", as: :authenticated_root
   end
@@ -14,6 +10,10 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => "/monitoring"
+  end
 
   get "/:user_name", to: "users#albums", as: :user_albums
 

@@ -2,7 +2,14 @@ class Amazon
   TMP_BUCKET = "photoalbum-tmp".freeze
 
   def self.delete_tmp_file(filepath)
-    s3 = AWS::S3.new
-    s3.buckets["photoalbum-tmp"].objects[filepath.gsub("/#{TMP_BUCKET}/", "")].delete
+    Aws.config.update(
+      region: ENV["AWS_REGION"],
+      credentials: Aws::Credentials.new(ENV["S3_ACCESS_KEY_ID"], ENV["S3_SECRET_KEY_ID"])
+    )
+
+    s3 = Aws::S3::Resource.new
+    bucket = s3.bucket("photoalbum-tmp")
+
+    bucket.object(filepath.gsub("/#{TMP_BUCKET}/", "")).delete
   end
 end
