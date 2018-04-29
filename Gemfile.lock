@@ -32,6 +32,10 @@ GEM
       globalid (>= 0.3.6)
     activemodel (5.1.6)
       activesupport (= 5.1.6)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (5.1.6)
       activemodel (= 5.1.6)
       activesupport (= 5.1.6)
@@ -624,6 +628,8 @@ GEM
     connection_pool (2.2.1)
     crass (1.0.3)
     database_cleaner (1.6.2)
+    decent_decoration (0.1.0)
+      decent_exposure (~> 3.0)
     decent_exposure (3.0.2)
       activesupport (>= 4.0)
     devise (4.4.3)
@@ -638,6 +644,12 @@ GEM
     dotenv-rails (2.2.1)
       dotenv (= 2.2.1)
       railties (>= 3.2, < 5.2)
+    draper (3.0.1)
+      actionpack (~> 5.0)
+      activemodel (~> 5.0)
+      activemodel-serializers-xml (~> 1.0)
+      activesupport (~> 5.0)
+      request_store (~> 1.0)
     email_spec (2.1.1)
       htmlentities (~> 4.3.3)
       launchy (~> 2.1)
@@ -766,6 +778,8 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     redis (4.0.1)
+    request_store (1.4.1)
+      rack (>= 1.4)
     require_all (1.5.0)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
@@ -886,9 +900,11 @@ DEPENDENCIES
   codeclimate-test-reporter
   coffee-rails (~> 4.2)
   database_cleaner
+  decent_decoration
   decent_exposure
   devise
   dotenv-rails
+  draper
   email_spec
   factory_bot_rails
   faker

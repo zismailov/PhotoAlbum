@@ -3,7 +3,7 @@ class AlbumsController < ApplicationController
 
   respond_to :html, :js
 
-  expose(:album, attributes: :album_params) # Album.new or Album.find(id)
+  expose_decorated(:album, attributes: :album_params)
 
   def index
     @albums = current_user.top_level_albums.order(title: :asc)
@@ -11,7 +11,11 @@ class AlbumsController < ApplicationController
 
   def create
     album.user = current_user
-    album.save ? redirect_to(albums_path) : (respond_with album)
+    if album.save
+      redirect_to albums_path
+    else
+      respond_with album
+    end
   end
 
   def update
