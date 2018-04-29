@@ -1,12 +1,21 @@
 - if @photo
   .photo data-id=@photo.id
-    .preview
+    .photo-preview
+      .row
+        .medium-4.columns
+          .photo-title
+            = @photo.title
+            - if @photo_policy.edit?
+              i.fi-pencil
       = image_tag @photo.picture.preview.url
-    .sidebar
-      .title
-        h3 = @photo.title
-      = link_to @photo, remote: true, method: :delete, data: { confirm: "Вы уверены, что хотите удалить эту фотографию?"} do
-        i.fi-x
-        '  Удалить фотографию
+    / .sidebar
+    /     .row
+    /       .title.left =
+    /       .right
+    /
+    /     .row
+    /       = link_to @photo, remote: true, method: :delete, data: { confirm: "Вы уверены, что хотите удалить эту фотографию?"} do
+    /       i.fi-x
+    /       '  Удалить фотографию
 - else
   h3 Sorry, photo was not found.
