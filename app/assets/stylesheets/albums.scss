@@ -1,12 +1,13 @@
-$border-color: #d3d3d3;
+$album-border-color: #d3d3d3;
+$album-shadow-color: rgba(50, 50, 50, .75);
 
 .albums {
   list-style-type: none;
   margin: 0;
 
   .album {
-    border: 1px solid $border-color;
-    box-shadow: 4px 4px 5px 0 rgba(50, 50, 50, .75);
+    border: 1px solid $album-border-color;
+    box-shadow: 4px 4px 5px 0 $album-shadow-color;
     float: left;
     height: 192px;
     margin-bottom: 16px;
