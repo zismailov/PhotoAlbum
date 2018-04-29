@@ -8,7 +8,9 @@ class PhotosController < ApplicationController
     @photos = @album.photos.order(position: :asc)
   end
 
-  def show; end
+  def show
+    @album = @photo.album
+  end
 
   def create
     @photo = Photo.create title: photo_title,
