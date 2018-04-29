@@ -17,25 +17,28 @@
 
 .photo-preview {
   float: left;
+  min-width: 960px;
   width: 960px;
 }
 
 .photo-actions {
   float: left;
   padding: 3px;
-  width: 240px;
+  width: 960px;
 }
 
 .album-thumbnails {
   float: right;
   margin: 0 auto;
   width: 240px;
+  height: 720px;
+  overflow-y: scroll;
 }
 
 .small-thumbnail {
   cursor: pointer;
   float: left;
-  margin: 4px;
+  margin: 2px;
   opacity: .6;
   width: 70px;
 

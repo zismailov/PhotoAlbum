@@ -2,11 +2,11 @@
 
 - if @photo
   .photo
-    .photo-preview
-      = render "photo_preview"
     .photo-actions
       = render "photo_actions"
     .album-thumbnails
       = render "album_small_thumbnails"
+    .photo-preview
+      = render "photo_preview"
 - else
   h3 Sorry, photo was not found.
