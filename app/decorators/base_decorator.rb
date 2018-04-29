@@ -1,3 +1,3 @@
 class BaseDecorator < Draper::Decorator
-  delegate :to_model, :persisted?
+  delegate :to_model
 end

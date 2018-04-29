@@ -2,8 +2,8 @@
   .form-inputs
     = f.input :title
     = f.input :description
-    = f.input :parent_album,
-                    collection: possible_parents_for(album),
+    = f.input :parent_album_id,
+                    collection: album.possible_parents,
                     include_blank: t('forms.album.should_be_top_level_album')
   .form-actions
     = f.button :submit
