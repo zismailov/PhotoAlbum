@@ -11,5 +11,6 @@ li.album data-id=album.id
   .album-description
     = t("app.albums.description", albums_count: album.child_albums.count, photos_count: album.photos.count).html_safe
   .album-actions
-    = link_to edit_album_path(album), class: "album_action_link" do
-      i.fi-pencil
+    - if AlbumPolicy.new(current_user, album).edit?
+      = link_to edit_album_path(album), class: "album_action_link" do
+        i.fi-pencil

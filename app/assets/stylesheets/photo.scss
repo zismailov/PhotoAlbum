@@ -8,6 +8,13 @@
   }
 }
 
+.album-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 240px;
+}
+
 .photo-preview {
   float: left;
   width: 960px;
