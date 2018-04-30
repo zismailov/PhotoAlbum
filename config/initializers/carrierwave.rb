@@ -9,4 +9,6 @@ CarrierWave.configure do |config|
   config.aws_authenticated_url_expiration = 60 * 60
 end
 
+config.asset_host = ENV["CLOUDFRONT_URL"]
+
 CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
