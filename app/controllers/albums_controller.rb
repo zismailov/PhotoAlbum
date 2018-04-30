@@ -4,17 +4,21 @@ class AlbumsController < ApplicationController
   respond_to :html, :js
 
   expose_decorated(:album, attributes: :album_params)
-  expose(:albums) { current_user.top_level_albums }
+
   expose(:album_policy) { policy_builder }
+
+  def new; end
 
   def create
     album.user = current_user
     if album.save
-      redirect_to albums_path
+      redirect_to album_photos_path(album)
     else
       respond_with album
     end
   end
+
+  def edit; end
 
   def update
     if album.save

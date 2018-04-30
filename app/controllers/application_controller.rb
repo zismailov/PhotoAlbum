@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   before_action :set_user_locale
 
+  expose_decorated(:top_level_albums, decorator: AlbumDecorator) { current_user.top_level_albums }
+
   AVAILABLE_LOCALES = %w[en ru].freeze
 
   def perform_authorization!(policy)

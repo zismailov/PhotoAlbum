@@ -1,9 +1,9 @@
 #uploader-modal.reveal-modal aria-labelledby="Upload photos" aria-hidden="true" role="dialog" data-reveal="true"
   .row
-    h3 Upload new photos to #{@album.title}
+    h3 Upload new photos to #{album.title}
     .left Please, choose photos you want to add to this album
     .right
-      = s3_uploader_form callback_url:   album_photos_url(@album),
+      = s3_uploader_form callback_url:   album_photos_url(album),
                          callback_param: 'photo[remote_picture_url]',
                          id: 's3-uploader',
                          key: "pictures/#{SecureRandom.hex}/${filename}",

@@ -1,3 +1,5 @@
 class BaseDecorator < Draper::Decorator
-  delegate :id, :to_model
+  include Draper::LazyHelpers
+
+  delegate :id
 end

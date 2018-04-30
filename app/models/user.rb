@@ -11,10 +11,7 @@ class User < ApplicationRecord
   ].freeze
 
   def top_level_albums
-    albums.ordered_by_title
-          .where(parent_album_id: nil)
-          .includes(:child_albums)
-          .decorate
+    albums.ordered_by_title.where(parent_album_id: nil).includes(:child_albums)
   end
 
   def admin?

@@ -1,2 +1,0 @@
-class PhotoPresenter < BasePresenter
-end

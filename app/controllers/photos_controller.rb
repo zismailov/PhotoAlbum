@@ -4,8 +4,11 @@ class PhotosController < ApplicationController
   before_action :set_album, only: %w[index create]
   before_action :set_photo, only: %w[show update destroy]
 
+  expose_decorated(:albums) { current_user.top_level_albums }
+  expose(:album) { set_album }
+
   def index
-    @photos = @album.photos.order(position: :asc)
+    @photos = album.photos.order(position: :asc)
   end
 
   def show
@@ -17,7 +20,7 @@ class PhotosController < ApplicationController
                           album_id: @album.id,
                           processing_status: "in_progress"
 
-    PhotoProcessorWorker.perform_async(@photo.id, photo_path, remote_url)
+    PhotoProcessor.perform_async(@photo.id, photo_path, remote_url)
   end
 
   def update
@@ -47,8 +50,7 @@ class PhotosController < ApplicationController
   end
 
   def set_album
-    @album = Album.find_by(id: params[:album_id])
-    @album_policy = AlbumPolicy.new(current_user, @album) if @album
+    Album.find_by(id: params[:album_id]).decorate
   end
 
   def set_photo

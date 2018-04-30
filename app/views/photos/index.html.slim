@@ -1,11 +1,11 @@
 = render 'breadcrumbs'
 
-h3 = @album.title
+h3 = album.title
 
-- if @album.child_albums.any?
-  = render 'albums/albums', albums: @album.child_albums.order(title: :asc)
+- if album.child_albums.any?
+  = render 'albums/albums', albums: album.child_albums
 
-- if @album.photos.any?
+- if album.photos.any?
   = render 'photos', photos: @photos
 
 = render 'uploader'

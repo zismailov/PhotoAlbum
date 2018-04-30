@@ -1,2 +1,0 @@
-class AlbumPresenter < BasePresenter
-end
