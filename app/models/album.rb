@@ -11,31 +11,4 @@ class Album < ApplicationRecord
   serialize :photos_order, Array
 
   scope :ordered_by_title, -> { order(title: :asc) }
-
-  def random_photo
-    photos.order("RANDOM()").first
-  end
-
-  def top_level_album?
-    parent_album_id.nil?
-  end
-
-  def completely_empty?
-    photos.empty? && child_albums.empty?
-  end
-
-  def parents
-    parents = []
-    return parents if top_level_album?
-
-    some_parent = parent_album
-
-    until some_parent.top_level_album?
-      parents << some_parent
-      some_parent = some_parent.parent_album
-    end
-    parents << some_parent
-
-    parents.reverse
-  end
 end

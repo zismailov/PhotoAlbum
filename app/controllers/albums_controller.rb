@@ -4,10 +4,8 @@ class AlbumsController < ApplicationController
   respond_to :html, :js
 
   expose_decorated(:album, attributes: :album_params)
-
-  def index
-    @albums = current_user.top_level_albums.order(title: :asc)
-  end
+  expose(:albums) { current_user.top_level_albums }
+  expose(:album_policy) { policy_builder }
 
   def create
     album.user = current_user
@@ -33,6 +31,10 @@ class AlbumsController < ApplicationController
   end
 
   private
+
+  def policy_builder
+    AlbumPolicy.new current_user, album
+  end
 
   def refresh_photos_order!
     position = 0
