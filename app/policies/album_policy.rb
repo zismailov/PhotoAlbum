@@ -1,9 +1,16 @@
-class AlbumPolicy < BasePolicy
-  def edit?
-    @object.user == @user
+class AlbumPolicy
+  attr_reader :user, :record
+
+  def initialize(user, record)
+    @user = user
+    @record = record
   end
 
-  def destroy?
-    @object.user == @user
+  def update?
+    @record.user == @user
+  end
+
+  def edit?
+    update?
   end
 end

@@ -5,8 +5,6 @@ class AlbumsController < ApplicationController
 
   expose_decorated(:album, attributes: :album_params)
 
-  expose(:album_policy) { policy_builder }
-
   def new; end
 
   def create
@@ -35,10 +33,6 @@ class AlbumsController < ApplicationController
   end
 
   private
-
-  def policy_builder
-    AlbumPolicy.new current_user, album
-  end
 
   def refresh_photos_order!
     position = 0
