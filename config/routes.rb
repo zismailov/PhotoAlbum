@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  authenticate :user, ->(user) { user.admin? } do
+  authenticate :user, ->(user) { user.administrator? } do
     mount Sidekiq::Web => "/monitoring"
   end
 

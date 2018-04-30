@@ -1,15 +1,10 @@
 class PhotosController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
 
-  before_action :set_album, only: %w[index create]
-  before_action :set_photo, only: %w[show update destroy]
-
-  expose_decorated(:albums) { current_user.top_level_albums }
   expose(:album) { set_album }
+  expose(:photo) { set_photo }
 
-  def index
-    @photos = album.photos.order(position: :asc)
-  end
+  def index; end
 
   def show
     @album = @photo.album
@@ -17,7 +12,7 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.create title: photo_title,
-                          album_id: @album.id,
+                          album_id: album.id,
                           processing_status: "in_progress"
 
     PhotoProcessor.perform_async(@photo.id, photo_path, remote_url)

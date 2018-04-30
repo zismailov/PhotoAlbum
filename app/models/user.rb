@@ -14,7 +14,7 @@ class User < ApplicationRecord
     albums.ordered_by_title.where(parent_album_id: nil).includes(:child_albums)
   end
 
-  def admin?
-    role == "admin"
+  def administrator?
+    role == "administrator"
   end
 end
