@@ -7,7 +7,7 @@ class RefreshPhotosOrder
     position = 0
     ActiveRecord::Base.transaction do
       album.photos_order.each do |photo_id|
-        album.photos.find(photo_id).update_attribute("position", position)
+        album.photos.find(photo_id).update("position", position)
         position += 1
       end
     end

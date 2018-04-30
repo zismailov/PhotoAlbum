@@ -8,6 +8,6 @@ class PhotoProcessorWorker
 
     Amazon.delete_tmp_file(path)
 
-    photo.update_attribute("processing_status", "finished")
+    photo.update("processing_status", "finished")
   end
 end

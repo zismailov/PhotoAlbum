@@ -6,7 +6,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   end
 
   def cache_dir
-    "#{Rails.root}/tmp/pictures"
+    Rails.root.join("tmp", "pictures")
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
