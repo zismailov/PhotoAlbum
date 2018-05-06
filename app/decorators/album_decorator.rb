@@ -1,5 +1,5 @@
 class AlbumDecorator < BaseDecorator
-  delegate :title, :description, :parent_album_id
+  delegate :title, :description, :parent_album_id, :photos_order
 
   decorates_association :parent_album
 

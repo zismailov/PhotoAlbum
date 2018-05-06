@@ -1,11 +1,4 @@
-class PhotoPolicy
-  attr_reader :user, :record
-
-  def initialize(user, record)
-    @user = user
-    @record = record
-  end
-
+class PhotoPolicy < BasePolicy
   def edit?
     photo_belongs_to_current_user?
   end

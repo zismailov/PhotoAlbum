@@ -1,14 +1,12 @@
 class PhotosController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
 
-  expose(:album) { set_album }
-  expose(:photo) { set_photo }
+  expose_decorated(:album, find_parameter: :album_id)
+  expose_decorated(:photo, attributes: :photo_params)
 
   def index; end
 
-  def show
-    @album = @photo.album
-  end
+  def show; end
 
   def create
     @photo = Photo.create title: photo_title,
@@ -42,15 +40,6 @@ class PhotosController < ApplicationController
 
   def remote_url
     URI.decode_www_form params[:photo][:remote_picture_url]
-  end
-
-  def set_album
-    Album.find_by(id: params[:album_id]).decorate
-  end
-
-  def set_photo
-    @photo = Photo.find_by(id: params[:id])
-    @photo_policy = PhotoPolicy.new(current_user, @photo) if @photo
   end
 
   def photo_params
