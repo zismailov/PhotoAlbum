@@ -1,15 +1,15 @@
 li.album data-id=album.id
   .album-cover
-    = link_to album_photos_path(album) do
-      - if album.photos.any?
-        = image_tag album.random_photo.picture.thumbnail.url
+    = link_to album do
+      - if album.photos?
+        = image_tag album.random_photo_url
       - else
         = image_tag "empty.jpg"
 
   .album-title
-    = link_to album.title, album_photos_path(album)
+    = link_to album.title, album
   .album-description
-    = t("app.albums.description", albums_count: album.child_albums.count, photos_count: album.photos.count).html_safe
+    = t("app.albums.description", albums_count: album.child_albums_count, photos_count: album.photos.count).html_safe
   .album-actions
     - if AlbumPolicy.new(current_user, album.object).edit?
       = link_to edit_album_path(album), class: "album_action_link" do

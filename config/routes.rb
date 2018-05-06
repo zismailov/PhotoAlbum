@@ -1,13 +1,9 @@
 require "sidekiq/web"
 
 Rails.application.routes.draw do
-  authenticated :user do
-    root "albums#index", as: :authenticated_root
-  end
-
-  resources :albums, except: %i[show] do
-    resources :photos, except: %i[new], shallow: true
-  end
+  # main routes
+  resources :albums
+  resources :photos
 
   devise_for :users
 
@@ -16,6 +12,11 @@ Rails.application.routes.draw do
   end
 
   get "/:user_name", to: "users#albums", as: :user_albums
+
+  # root_path should be different for guests and authenticated users
+  authenticated :user do
+    root "albums#index", as: :authenticated_root
+  end
 
   root "pages#welcome"
 end

@@ -4,9 +4,15 @@ class AlbumDecorator < BaseDecorator
   decorates_association :parent_album
   decorates_association :photos
 
+  def random_photo_url
+    random_photo.picture.thumbnail.url
+  end
+
   def child_albums
     @child_albums ||= object.child_albums.order(title: :asc).decorate
   end
+
+  delegate :count, to: :child_albums, prefix: true
 
   def child_albums?
     child_albums.any?

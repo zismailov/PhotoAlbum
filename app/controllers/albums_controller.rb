@@ -7,11 +7,13 @@ class AlbumsController < ApplicationController
 
   def new; end
 
+  def show; end
+
   def create
     album.user = current_user
     album.save
 
-    respond_with album, location: album_photos_path(album)
+    respond_with album
   end
 
   def edit; end

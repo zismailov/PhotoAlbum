@@ -3,7 +3,7 @@
     h3 Upload new photos to #{album.title}
     .left Please, choose photos you want to add to this album
     .right
-      = s3_uploader_form callback_url:   album_photos_url(album),
+      = s3_uploader_form callback_url: photos_url,
                          callback_param: 'photo[remote_picture_url]',
                          id: 's3-uploader',
                          key: "pictures/#{SecureRandom.hex}/${filename}",

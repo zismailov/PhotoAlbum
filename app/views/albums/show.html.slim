@@ -1,0 +1,9 @@
+= render 'breadcrumbs'
+
+h3 = album.title
+
+= render "albums/albums", albums: album.child_albums if album.child_albums?
+
+= render "photos/photos", photos: album.photos if album.photos?
+
+= render 'uploader'
