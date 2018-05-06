@@ -17,5 +17,5 @@ Rails.application.routes.draw do
 
   get "/:user_name", to: "users#albums", as: :user_albums
 
-  root "pages#index"
+  root "pages#welcome"
 end

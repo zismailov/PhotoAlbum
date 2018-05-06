@@ -1,18 +1,23 @@
 class AlbumDecorator < BaseDecorator
-  delegate :title, :description, :parent_album_id, :photos_order
+  delegate :title, :description, :parent_album_id, :photos_order, :random_photo
 
   decorates_association :parent_album
+  decorates_association :photos
 
   def child_albums
     @child_albums ||= object.child_albums.order(title: :asc).decorate
+  end
+
+  def child_albums?
+    child_albums.any?
   end
 
   def user
     @user ||= object.user
   end
 
-  def photos
-    @photos ||= object.photos
+  def photos?
+    photos.any?
   end
 
   def completely_empty?
@@ -29,10 +34,6 @@ class AlbumDecorator < BaseDecorator
 
   def navigation_class
     object.child_albums.any? ? "has-dropdown not-click" : ""
-  end
-
-  def random_photo
-    photos.order("RANDOM()").first
   end
 
   def top_level_album?

@@ -1,0 +1,8 @@
+ru:
+  plans:
+    free:
+      title: Бесплатный
+      cost: 0₽
+    full:
+      title: Полный
+      cost: 200₽

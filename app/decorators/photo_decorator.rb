@@ -1,5 +1,5 @@
 class PhotoDecorator < BaseDecorator
-  delegate :title, :picture
+  delegate :title, :picture, :processing_status
 
   def processed?
     processing_status == "finished"

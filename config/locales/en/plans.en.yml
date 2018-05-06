@@ -1,0 +1,10 @@
+en:
+  plans:
+    free:
+      title: Free
+      cost: $0
+      description: "All features available, but limitations present:"
+    full:
+      title: Full
+      cost: $2.99
+      description: "All features available, no limitations!

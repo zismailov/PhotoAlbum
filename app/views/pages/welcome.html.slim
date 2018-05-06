@@ -1,0 +1,21 @@
+.row
+  .medium-6.columns
+    ul.pricing-table.recommended
+      li.title = t("plans.free.title")
+      li.price = t("plans.free.cost")
+      li.description = t("plans.free.description")
+      li.bullet-item
+      li.bullet-item
+      li.bullet-item
+      li.cta-button
+        = link_to t("actions.devise.sign_up"), new_user_registration_path, class: "button"
+  .medium-6.columns
+    ul.pricing-table
+      li.title = t("plans.full.title")
+      li.price = t("plans.full.cost")
+      li.description = t("plans.full.description")
+      li.bullet-item
+      li.bullet-item
+      li.bullet-item
+      li.cta-button
+        a.button href="#" Купить

@@ -11,7 +11,7 @@ class AlbumsController < ApplicationController
     album.user = current_user
     album.save
 
-    respond_with album, location: album_photos_path
+    respond_with album, location: album_photos_path(album)
   end
 
   def edit; end
@@ -20,7 +20,7 @@ class AlbumsController < ApplicationController
     album.save
     RefreshPhotosOrder.call(album: album)
 
-    respond_with album, album_photos_path(album)
+    respond_with album, location: album_photos_path(album)
   end
 
   def destroy

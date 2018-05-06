@@ -11,4 +11,8 @@ class Album < ApplicationRecord
   serialize :photos_order, Array
 
   scope :ordered_by_title, -> { order(title: :asc) }
+
+  def random_photo
+    photos.order("RANDOM()").first
+  end
 end

@@ -18,13 +18,15 @@ class ApplicationController < ActionController::Base
   def set_user_locale
     if user_signed_in?
       I18n.locale = current_user.locale
+    elsif params[:locale].present? && (params[:locale].in? AVAILABLE_LOCALES)
+      I18n.locale = params[:locale]
     else
-      # browser_locale = extract_language_from_request
-      # I18n.locale = if browser_locale.in? AVAILABLE_LOCALES
-      #                 browser_locale
-      #               else
-      I18n.default_locale
-      #                 end
+      browser_locale = extract_language_from_request
+      I18n.locale = if browser_locale.in? AVAILABLE_LOCALES
+                      browser_locale
+                    else
+                      I18n.default_locale
+                    end
     end
   end
 
