@@ -22,7 +22,7 @@ class AlbumsController < ApplicationController
     album.save
     RefreshPhotosOrder.call(album: album)
 
-    respond_with album, location: album_photos_path(album)
+    respond_with album
   end
 
   def destroy

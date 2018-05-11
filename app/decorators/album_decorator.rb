@@ -12,8 +12,6 @@ class AlbumDecorator < BaseDecorator
     @child_albums ||= object.child_albums.order(title: :asc).decorate
   end
 
-  delegate :count, to: :child_albums, prefix: true
-
   def child_albums?
     child_albums.any?
   end
@@ -39,7 +37,7 @@ class AlbumDecorator < BaseDecorator
   end
 
   def navigation_class
-    object.child_albums.any? ? "has-dropdown not-click" : ""
+    child_albums? ? "has-dropdown not-click" : ""
   end
 
   def top_level_album?
