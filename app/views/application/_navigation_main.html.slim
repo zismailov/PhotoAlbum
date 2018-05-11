@@ -8,8 +8,6 @@ ul.left
         li.divider
         li = link_to new_album_path do
           = t("app.navigation.main.new_album")
-    - if params[:controller] == 'albums'
       li.divider
       li.has-form
-        a.button href="#" data-reveal-id="uploader-modal"
-          = t("app.navigation.main.add_photos")
+        = link_to t("app.navigation.main.add_photos"), new_photo_path

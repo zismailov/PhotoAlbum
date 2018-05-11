@@ -1,5 +1,22 @@
-h1 New photo
+.row
+  .medium-4.columns
+    h3 Select album
+    #albums_tree
+      ul
+        - current_user.top_level_albums.each do |album|
+          li = render "album_link", album: album
+  .medium-8.columns
+    .row
+      h3 Upload new photos
+      .left Please, choose photos you want to add to this album
+      .right
+        = s3_uploader_form callback_url: photos_url,
+                           callback_param: 'photo[remote_picture_url]',
+                           id: 's3-uploader',
+                           key: "pictures/#{SecureRandom.hex}/${filename}",
+                           key_starts_with: 'pictures/'
+          = file_field_tag :file, multiple: true
 
-== render 'form'
-
-= link_to 'Back', photos_path
+    .row
+      .uploader-progress-bars
+      = render "progress_bars"
