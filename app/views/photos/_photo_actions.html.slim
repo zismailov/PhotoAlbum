@@ -8,10 +8,12 @@
       i.fi-x
 hr
   .left
-    = link_to (photo_path(photo.previous_photo_id_from_album)), remote: true do
-      i.fi-arrow-left
-      ' Назад
+    - if photo.previous_photo_id_from_album
+      = link_to (photo_path(photo.previous_photo_id_from_album)), remote: true do
+        i.fi-arrow-left
+        ' Назад
   .right
-    = link_to (photo_path(photo.next_photo_id_from_album)), remote: true do
-      ' Вперёд
-      i.fi-arrow-right
+    - if photo.next_photo_id_from_album
+      = link_to (photo_path(photo.next_photo_id_from_album)), remote: true do
+        ' Вперёд
+        i.fi-arrow-right
