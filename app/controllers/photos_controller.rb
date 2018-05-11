@@ -1,8 +1,8 @@
 class PhotosController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
 
-  expose_decorated(:album, find_parameter: :album_id)
   expose_decorated(:photo, attributes: :photo_params)
+  expose_decorated(:album) { photo.album }
 
   def index; end
 

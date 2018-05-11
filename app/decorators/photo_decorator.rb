@@ -1,6 +1,8 @@
 class PhotoDecorator < BaseDecorator
   delegate :title, :picture, :processing_status
 
+  decorates_association :album
+
   def processed?
     processing_status == "finished"
   end
