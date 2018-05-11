@@ -22,7 +22,7 @@ class AlbumsController < ApplicationController
     album.save
     RefreshPhotosOrder.call(album: album)
 
-    render nothing: true, status: :ok
+    respond_with album
   end
 
   def destroy
