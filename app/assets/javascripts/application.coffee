@@ -9,7 +9,7 @@
 $ ->
   $(document).foundation()
 
-  $(".albums-jstree").on "changed.jstree", (e, data) ->
+  $(".albums-jstree-view").on "changed.jstree", (e, data) ->
     id = data.changed.selected
     album_id = $("##{id}").data('album-id')
 
@@ -18,7 +18,7 @@ $ ->
         url: "/albums/#{album_id}"
         dataType: "script"
 
-  $(".albums-jstree").jstree
+  $(".albums-jstree, .albums-jstree-view").jstree
     "core":
       "animation": 0
     "plugins": [ "wholerow", "changed", "dnd" ]

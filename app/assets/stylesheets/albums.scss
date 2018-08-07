@@ -3,6 +3,7 @@ $album-shadow-color: rgba(50, 50, 50, .75);
 
 .albums-container {
   float: left;
+  display: table;
 }
 
 .albums {
