@@ -13,11 +13,11 @@ hr {
 }
 
 .content {
+  height: 100%;
+  min-height: 100%;
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 8px;
-  height: 100%;
-  min-height: 100%;
 }
 
 .uploader-progress-bars {
@@ -25,14 +25,12 @@ hr {
     margin-top: 12px;
     width: 100%;
   }
-
   .progress {
     border: 0;
     height: 16px;
     margin: 0;
     padding: 0;
   }
-
   .bar {
     background: $bar-color;
     height: 16px;
