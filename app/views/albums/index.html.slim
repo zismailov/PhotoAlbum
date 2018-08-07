@@ -1,3 +1,4 @@
-h3 = t("app.albums.root")
-
-= render "albums", albums: top_level_albums
+.albums_tree
+  = render "albums_tree"
+.albums
+  = render "albums", albums: top_level_albums

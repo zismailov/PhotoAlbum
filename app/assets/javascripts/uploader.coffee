@@ -1,11 +1,9 @@
 class @Uploader
 
-  uploaderForm: $("#s3-uploader")
-  fileInput: $("input#file")
+  uploaderForm:        $("#s3-uploader")
 
   constructor: ->
-      @initializeUploader()
-      @initializeAlbumsTree()
+    @initializeUploader()
 
   initializeUploader: ->
     @uploaderForm.S3Uploader
@@ -13,6 +11,3 @@ class @Uploader
         album_id: ""
       progress_bar_target: $(".uploader-progress-bars")
       remove_completed_progress_bar: true
-
-  initializeAlbumsTree: ->
-    $('#albums_tree').jstree()

@@ -12,3 +12,4 @@ $ ->
 
   window.AlbumPage = new window.Album
   window.Uploader = new window.Uploader
+  window.AlbumTree = new window.AlbumTree
