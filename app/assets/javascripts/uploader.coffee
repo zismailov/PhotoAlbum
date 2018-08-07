@@ -9,4 +9,4 @@ class @UploaderForm
       additional_data:
         album_id: "123"
       progress_bar_target: $(".uploader-progress-bars")
-      remove_completed_progress_bar: true
+      remove_completed_progress_bar: false
