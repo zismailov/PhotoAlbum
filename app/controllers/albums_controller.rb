@@ -7,7 +7,9 @@ class AlbumsController < ApplicationController
 
   def new; end
 
-  def show; end
+  def show
+    respond_with album
+  end
 
   def create
     album.user = current_user

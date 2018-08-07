@@ -1,10 +1,13 @@
 $album-border-color: #d3d3d3;
 $album-shadow-color: rgba(50, 50, 50, .75);
 
+.albums_container {
+  float: left;
+}
+
 .albums {
   list-style-type: none;
   margin: 0;
-
   .album {
     border: 1px solid $album-border-color;
     box-shadow: 4px 4px 5px 0 $album-shadow-color;
@@ -13,19 +16,15 @@ $album-shadow-color: rgba(50, 50, 50, .75);
     margin-bottom: 16px;
     margin-right: 16px;
     width: 192px;
-
     p {
       margin-bottom: 0;
     }
-
     .album-cover {
       height: 144px;
       overflow: hidden;
       text-align: center;
       width: 190px;
-
     }
-
     .album-title {
       float: left;
       font-size: 1em;
@@ -37,14 +36,12 @@ $album-shadow-color: rgba(50, 50, 50, .75);
       white-space: nowrap;
       width: 185px;
     }
-
     .album-actions {
       float: right;
       height: 18px;
       margin-left: 7px;
       margin-right: 7px;
     }
-
     .album-description {
       clear: both;
       float: left;

@@ -1,5 +1,5 @@
 //= require jquery-ui/sortable
-//= require jstree-default
+//= require jstree
 //= require_tree .
 //= require_self
 
@@ -16,6 +16,8 @@ hr {
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 8px;
+  height: 100%;
+  min-height: 100%;
 }
 
 .uploader-progress-bars {

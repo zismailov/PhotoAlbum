@@ -1,7 +1,5 @@
-//= render 'breadcrumbs'
-.albums_tree
+.albums_jstree
   = render "albums_tree"
 
-h3 = album.title
-= render "albums/albums", albums: album.child_albums if album.child_albums?
-= render "photos/photos", photos: album.photos if album.photos?
+.albums_container
+  = render "albums_container"

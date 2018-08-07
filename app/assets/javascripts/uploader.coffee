@@ -1,6 +1,6 @@
 class @Uploader
 
-  uploaderForm:        $("#s3-uploader")
+  uploaderForm: $("#s3-uploader")
 
   constructor: ->
     @initializeUploader()

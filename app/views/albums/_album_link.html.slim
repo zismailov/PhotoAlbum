@@ -4,4 +4,4 @@
   ul
     - album.child_albums.each do |album|
       li data-album-id=album.id
-         = render "album_link", album: album
+        = render "albums/album_link", album: album

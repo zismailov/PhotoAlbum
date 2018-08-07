@@ -1,15 +1,27 @@
 #= require jquery
+#= require jstree
 #= require jquery_ujs
-#= require jquery-ui/widgets/sortable
+#= require jquery-ui/sortable
 #= require foundation
 #= require s3_direct_upload
-#= require jstree
-#= require album
 #= require_tree .
 
 $ ->
   $(document).foundation()
 
+  $(".albums_jstree").on "changed.jstree", (e, data) ->
+    id = data.changed.selected
+    album_id = $("##{id}").data('album-id')
+
+    if album_id != undefined
+      $.ajax
+        url: "/albums/#{album_id}"
+        dataType: "script"
+
+  $(".albums_jstree").jstree
+    "core":
+      "animation": 0
+    "plugins": [ "wholerow", "changed", "dnd" ]
+
   window.AlbumPage = new window.Album
   window.Uploader = new window.Uploader
-  window.AlbumTree = new window.AlbumTree
