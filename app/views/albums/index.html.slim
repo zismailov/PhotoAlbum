@@ -1,5 +1,8 @@
-h3 Albums
-.albums-jstree-view
-  = render "albums_tree"
-.albums-container
-  = render "albums", albums: top_level_albums
+.row
+  .medium-3.columns
+    h3 Albums
+    .albums-tree data-behavior="show-album"
+      = render "albums_tree"
+  .medium-9.columns
+    .albums-container
+      = render "albums", albums: top_level_albums

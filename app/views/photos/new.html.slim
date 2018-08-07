@@ -1,10 +1,11 @@
 .row
   .medium-4.columns
-    .albums-jstree
+    h3 Upload to:
+    .albums-tree data-behavior="select-album"
       = render 'albums/albums_tree'
   .medium-8.columns
     .row
-      h3 Upload new photos
+      h3 Select new photos
       .left Please, choose photos you want to add to this album
       .right
         = s3_uploader_form callback_url: photos_url,

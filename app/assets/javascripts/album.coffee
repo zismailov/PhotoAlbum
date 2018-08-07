@@ -1,6 +1,6 @@
 class @Album
-  photosContainer:     $("ul.photos")
-  thumbnailContainer:  $("li.photo-thumbnail")
+  photosContainer:    $("ul.photos")
+  thumbnailContainer: $("li.photo-thumbnail")
 
   album:
     id: $("ul.photos").data("album-id")

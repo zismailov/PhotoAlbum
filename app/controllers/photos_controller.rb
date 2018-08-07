@@ -9,11 +9,16 @@ class PhotosController < ApplicationController
   def show; end
 
   def create
-    @photo = Photo.create title: photo_title,
-                          album_id: album.id,
-                          processing_status: "in_progress"
+    # add policy based check if album is accessible by
+    # current_user for write
+    album = current_user.albums.find(params[:album_id])
 
-    PhotoProcessor.perform_async(@photo.id, photo_path, remote_url)
+    photo.title = photo_title
+    photo.album_id = album.id
+    photo.processing_status = "in_progress"
+    photo.save
+
+    PhotoProcessor.perform_async(photo.id, photo_path, remote_url)
   end
 
   def update

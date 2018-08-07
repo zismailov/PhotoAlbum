@@ -9,19 +9,8 @@
 $ ->
   $(document).foundation()
 
-  $(".albums-jstree-view").on "changed.jstree", (e, data) ->
-    id = data.changed.selected
-    album_id = $("##{id}").data('album-id')
+  window.App = {}
 
-    if album_id != undefined
-      $.ajax
-        url: "/albums/#{album_id}"
-        dataType: "script"
-
-  $(".albums-jstree, .albums-jstree-view").jstree
-    "core":
-      "animation": 0
-    "plugins": [ "wholerow", "changed", "dnd" ]
-
-  window.AlbumPage = new window.Album
-  window.Uploader = new window.Uploader
+  window.App.AlbumPage = new window.Album
+  window.App.UploaderForm = new window.UploaderForm
+  window.App.AlbumsTree = new window.AlbumsTree
