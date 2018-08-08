@@ -2,20 +2,22 @@
 //= require jstree
 //= require_tree .
 //= require_self
+
 @import 'foundation_and_overrides';
 
 $bar-color: #000;
 
-body {
-  background-image: url("/images/bg.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-}
-
 hr {
   margin-bottom: 3px;
   margin-top: 3px;
+}
+
+.content {
+  height: 100%;
+  min-height: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
 }
 
 .uploader-progress-bars {

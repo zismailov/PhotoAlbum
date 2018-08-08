@@ -1,7 +1,11 @@
-ul.menu.float-right
+ul.right
   - if user_signed_in?
-    li = link_to t("actions.devise.edit_profile"), edit_user_registration_path
-    li = link_to t("actions.devise.sign_out"), destroy_user_session_path, method: "delete"
+    li.has-dropdown
+      a.user-dropdown(href="#") = current_user.email
+      ul.dropdown
+        new_user_registration_path
+        li = link_to t("actions.devise.edit_profile"), edit_user_registration_path
+        li = link_to t("actions.devise.sign_out"), destroy_user_session_path, method: "delete"
   - else
     = active_link_to t("actions.devise.sign_in"), new_user_session_path, active: :exclusive, wrap_tag: :li
     = active_link_to t("actions.devise.sign_up"), new_user_registration_path, active: :exclusive, wrap_tag: :li
