@@ -14,7 +14,7 @@ html class='no-js' lang='en'
     = stylesheet_link_tag :application
     = javascript_include_tag 'vendor/modernizr'
 
-  body
+  body class=(user_signed_in? ? "user-signed-in" : "")
     .root
       = render 'navigation'
       = render 'messages'

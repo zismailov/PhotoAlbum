@@ -18,5 +18,5 @@ Rails.application.routes.draw do
     root "albums#index", as: :authenticated_root
   end
 
-  root "pages#welcome"
+  root "albums#new"
 end

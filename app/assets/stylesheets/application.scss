@@ -2,10 +2,17 @@
 //= require jstree
 //= require_tree .
 //= require_self
-
 @import 'foundation_and_overrides';
 
 $bar-color: #000;
+
+body:not(.user-signed-in) {
+  background-image: image-url("bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center bottom;
+  background-size: cover;
+}
 
 hr {
   margin-bottom: 3px;
