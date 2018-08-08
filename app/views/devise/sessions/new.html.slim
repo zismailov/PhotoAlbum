@@ -1,6 +1,6 @@
 .row
-  .medium-5.small-centered.columns
-    .panel
+  .medium-6.small-centered.columns
+    .callout.primary
       h4 = t('titles.devise.sessions.new')
       = simple_form_for resource,
           as: resource_name,
@@ -12,4 +12,6 @@
           = f.input :remember_me, as: :boolean, label: t('actions.devise.remember_me')
 
         .form-actions
-          = f.button :submit, t('actions.devise.sign_in'), class: "small-12 small"
+          .row
+            .small-6.small-centered
+              = f.button :submit, t('actions.devise.sign_in'), class: "float-center"

@@ -3,7 +3,8 @@ class AlbumsController < ApplicationController
 
   respond_to :html, :js
 
-  expose_decorated(:album, attributes: :album_params)
+  expose_decorated :top_level_albums, :current_user_top_level_albums
+  expose_decorated :album, attributes: :album_params
 
   def new; end
 
@@ -36,5 +37,9 @@ class AlbumsController < ApplicationController
 
   def album_params
     params.require(:album).permit(:title, :description, :parent_album_id, photos_order: [])
+  end
+
+  def current_user_top_level_albums
+    current_user.top_level_albums
   end
 end

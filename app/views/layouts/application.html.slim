@@ -1,25 +1,19 @@
 doctype html
-
-html class='no-js' lang='en'
-
+html
   head
-    meta charset='utf-8'
-    meta name='viewport' content='width=device-width, initial-scale=1.0'
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
 
-    link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'
-
-    title = content_for?(:title) ? yield(:title) : "PhotoAlbum"
+    title = content_for?(:title) ? yield(:title) : "OpenAlbum"
 
     = csrf_meta_tags
     = stylesheet_link_tag :application
-    = javascript_include_tag 'vendor/modernizr'
 
   body
-    .root
-      = render 'navigation'
-      = render 'messages'
-    .content
-      = yield
+    = render "navigation"
+    = render "messages"
+
+    = yield
 
     = javascript_include_tag :application
     = render "layouts/yandex_metrika"

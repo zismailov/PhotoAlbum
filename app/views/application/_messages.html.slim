@@ -1,5 +1,7 @@
 .row
-  - flash.each do |type, content|
-    div(data-alert class="alert-box #{type}")
-      = content
-      a.close &times;
+  .medium-8.medium-centered.columns
+    - flash.each do |type, content|
+      div.callout class="alert #{type}" data-closable=true
+        = content
+        button.close-button type="button" data-close=true
+          span aria-hidden="true" &times;
