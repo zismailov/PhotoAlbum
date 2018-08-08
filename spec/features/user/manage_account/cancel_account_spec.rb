@@ -13,7 +13,6 @@ RSpec.describe "Cancel account", type: :feature do
     click_button "I want to delete my account!"
 
     expect(page).to have_content("Sign in")
-    expect(page).to have_content("Bye! Your account has been successfully cancelled. We hope to see you again soon.")
 
     visit new_user_session_path
     sign_in(user.email, "12345678")

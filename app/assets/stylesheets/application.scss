@@ -7,10 +7,10 @@
 $bar-color: #000;
 
 body:not(.user-signed-in) {
-  background-image: image-url("bg.jpg");
-  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-image: image-url("bg.jpg");
   background-position: center bottom;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
