@@ -1,12 +1,13 @@
 .row
   .medium-4.columns
-    h3 Upload to:
+    h3 Добавить в альбом:
     .albums-tree data-behavior="select-album"
       = render 'albums/albums_tree'
   .medium-8.columns
     .row
-      h3 Select new photos
-      .left Please, choose photos you want to add to this album
+      h3 Фотографии для загрузки
+      .left
+        span.selected-album-title
       .right
         = s3_uploader_form callback_url: photos_url,
                            callback_param: 'photo[remote_picture_url]',

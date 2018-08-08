@@ -1,4 +1,4 @@
 ul
   - current_user.top_level_albums.each do |album|
-    li data-album-id=album.id
+    li data-album-id=album.id data-album-title=album.title
       = render "albums/album_link", album: album

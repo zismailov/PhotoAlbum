@@ -3,5 +3,5 @@
 - if album.child_albums.any?
   ul
     - album.child_albums.each do |album|
-      li data-album-id=album.id
+      li data-album-id=album.id data-album-title=album.title
         = render "albums/album_link", album: album
